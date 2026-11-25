@@ -1,5 +1,7 @@
 # Portfolio
 
+**English** · [Русский](README.ru.md)
+
 Personal portfolio built with **Next.js 16**, **React 19**, **Tailwind CSS**, **Framer Motion** and **Prisma 7** (PostgreSQL). It keeps a view and like counter in the database.
 
 ## Run locally
