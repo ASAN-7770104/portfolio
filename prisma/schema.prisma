@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+/// Счетчик просмотров и лайков
+model Stats {
+  id        Int      @id @default(1)
+  views     Int      @default(0)
+  likes     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("stats")
+}
+
+/// История посещений для аналитики и защиты от спама
+model VisitLog {
+  id        Int      @id @default(autoincrement())
+  timestamp DateTime @default(now())
+
+  @@index([timestamp])
+  @@map("visit_logs")
+}
